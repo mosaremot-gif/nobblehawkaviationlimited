@@ -68,11 +68,7 @@ export default function Footer() {
         {/* Compact Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] font-mono text-zinc-500">
           <p>© 2026 Skyline Air Ltd. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-[#0A0A0A] transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-[#0A0A0A] transition-colors">Terms of Operations</Link>
-            <Link href="/safety" className="hover:text-[#0A0A0A] transition-colors">Safety Audits</Link>
-          </div>
+          
         </div>
 
       </div>

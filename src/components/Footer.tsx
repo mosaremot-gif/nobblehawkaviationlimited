@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-3">
             <Link href="/" className="inline-block">
               <span className="text-xl font-black tracking-tight text-[#0A0A0A]">
-                NOBBLE HAWK AVIATION<span className="text-[#62c5ed]"> LIMITED</span>
+                NOBLE HAWK AVIATION<span className="text-[#62c5ed]"> LIMITED</span>
               </span>
             </Link>
            
@@ -57,7 +57,7 @@ export default function Footer() {
               
               <a href="mailto:charter@skylineair.com" className="flex items-center gap-2 hover:text-[#62c5ed] transition-colors font-medium">
                 <Mail className="w-3.5 h-3.5 text-[#62c5ed]" />
-                <span>charter@skylineair.com</span>
+                <span>info@noblehawkaviationlimited.com</span>
               </a>
               
             </div>

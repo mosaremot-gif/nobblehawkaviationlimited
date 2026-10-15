@@ -34,7 +34,7 @@ export default function Navbar() {
         {/* BRAND LOGO */}
         <Link href="/" className="flex items-center gap-2 group">
           <span className="text-2xl font-black tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover:text-gray-200 transition-colors">
-            NOBBLE HAWK AVIATION<span className="text-[#62c5ed]"> LIMITED</span>
+            NOBLE HAWK AVIATION<span className="text-[#62c5ed]"> LIMITED</span>
           </span>
           <span className="hidden sm:inline-block h-4 w-px bg-white/40 ml-2" />
           <span className="hidden sm:inline-block text-[10px] font-mono tracking-widest text-gray-200 uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">

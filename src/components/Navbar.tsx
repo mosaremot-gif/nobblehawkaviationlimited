@@ -34,7 +34,7 @@ export default function Navbar() {
         {/* BRAND LOGO */}
         <Link href="/" className="flex items-center gap-2 group">
           <span className="text-2xl font-black tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover:text-gray-200 transition-colors">
-            NOBBLE HAWK AVIATION<span className="text-[#62c5ed]"> LIMITED</span>
+            NOBLE HAWK AVIATION<span className="text-[#62c5ed]"> LIMITED</span>
           </span>
           <span className="hidden sm:inline-block h-4 w-px bg-white/40 ml-2" />
           <span className="hidden sm:inline-block text-[10px] font-mono tracking-widest text-gray-200 uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
@@ -140,13 +140,13 @@ export default function Navbar() {
           </nav>
 
           <div className="pt-4 border-t border-white/10 flex flex-col space-y-3">
-            <a
+            /*<a
               href="tel:+254700000000"
               className="flex items-center gap-2 text-xs font-mono text-gray-300"
             >
               <PhoneCall className="w-3.5 h-3.5 text-[#62C5ED]" />
               <span>+254 (0) 700 000 000</span>
-            </a>
+            </a>*/
             <Link
               href="/booking"
               onClick={() => setMobileMenuOpen(false)}

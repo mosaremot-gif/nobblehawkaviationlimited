@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-3">
             <Link href="/" className="inline-block">
               <span className="text-xl font-black tracking-tight text-[#0A0A0A]">
-                NOBBLE HAWK AVIATION<span className="text-[#62c5ed]"> LIMITED</span>
+                NOBLE HAWK AVIATION<span className="text-[#62c5ed]"> LIMITED</span>
               </span>
             </Link>
            
@@ -55,9 +55,9 @@ export default function Footer() {
             </h4>
             <div className="space-y-2 text-xs text-zinc-700">
               
-              <a href="mailto:charter@skylineair.com" className="flex items-center gap-2 hover:text-[#62c5ed] transition-colors font-medium">
+              <a href="mailto:info@noblehawkaviationlimited.com" className="flex items-center gap-2 hover:text-[#62c5ed] transition-colors font-medium">
                 <Mail className="w-3.5 h-3.5 text-[#62c5ed]" />
-                <span>charter@skylineair.com</span>
+                <span>info@noblehawkaviationlimited.com</span>
               </a>
               
             </div>
@@ -67,12 +67,8 @@ export default function Footer() {
 
         {/* Compact Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] font-mono text-zinc-500">
-          <p>© 2026 Skyline Air Ltd. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-[#0A0A0A] transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-[#0A0A0A] transition-colors">Terms of Operations</Link>
-            <Link href="/safety" className="hover:text-[#0A0A0A] transition-colors">Safety Audits</Link>
-          </div>
+          <p>© 2026 Noble Hawk Aviation Ltd. All rights reserved.</p>
+          
         </div>
 
       </div>

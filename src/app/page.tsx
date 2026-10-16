@@ -267,7 +267,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4: THE SKYLINE ECOSYSTEM */}
+      {/* SECTION 4: THE NOBLE HAWK ECOSYSTEM */}
       <section className="py-28 px-8 md:px-16 bg-white text-[#0A0A0A]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
@@ -317,7 +317,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-6 left-6 right-6 text-white">
                   <span className="text-[10px] uppercase tracking-[0.25em] font-mono text-[#62C5ED] block mb-1">
-                    Skyline VIP Services
+                    Noble Hawk Aviation VIP Services
                   </span>
                   <p className="text-xs text-zinc-200 font-light">
                     Seamless tarmac transfers and dedicated journey coordination across every destination.
@@ -341,7 +341,7 @@ export default function Home() {
             </span>
             
             <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight text-black">
-              Experience Skyline Air
+              Experience Noble Hawk Air
             </h2>
 
             <p className="text-black/85 text-sm md:text-base font-medium max-w-xl leading-relaxed">
@@ -369,7 +369,7 @@ export default function Home() {
           <div className="lg:col-span-5 relative min-h-[320px] lg:min-h-full bg-zinc-900">
             <Image
               src="/airphoto-1.jpg"
-              alt="Skyline Air Private Jet Tarmac"
+              alt="Noble Hawk Aviation Air Private Jet Tarmac"
               fill
               className="object-cover object-center"
               unoptimized

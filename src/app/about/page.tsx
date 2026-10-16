@@ -45,7 +45,7 @@ export default function AboutPage() {
         {/* Background Aircraft Image */}
         <Image
           src="/airphoto-5.jpg"
-          alt="Skyline Air Private Jet Tarmac"
+          alt="Noble Hawk Aviation Air Private Jet Tarmac"
           fill
           priority
           className="object-cover object-center pointer-events-none"
@@ -62,7 +62,7 @@ export default function AboutPage() {
               About Us
             </h1>
             <p className="text-gray-100 text-sm md:text-lg leading-relaxed max-w-2xl font-bold drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-              At Skyline Air, we pride ourselves on our commitment to excellence, safety, and personalized service. Our core values are the foundation of everything we do, guiding us in providing exceptional aviation services tailored to our clients’ needs.
+              At Noble Hawk Aviation Limited, we pride ourselves on our commitment to excellence, safety, and personalized service. Our core values are the foundation of everything we do, guiding us in providing exceptional aviation services tailored to our clients’ needs.
             </p>
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
               </h2>
               <div className="h-0.5 w-16 bg-[#62C5ED] my-6" />
               <p className="text-zinc-700 text-base md:text-lg leading-relaxed font-light">
-                Founded with a vision to deliver flawless air charter brokerage services, Skyline Air bridges the gap between regional bush airstrips and major global finance hubs. We eliminate the friction of commercial air travel by offering immediate, custom-tailored flight solutions.
+                Founded with a vision to deliver flawless air charter brokerage services, Noble Hawk Aviation Limited bridges the gap between regional bush airstrips and major global finance hubs. We eliminate the friction of commercial air travel by offering immediate, custom-tailored flight solutions.
               </p>
               <p className="text-zinc-600 text-sm md:text-base leading-relaxed">
                 Whether orchestrating a multi-leg executive roadshow across Africa and the Middle East or coordinating a private bush landing directly at a Laikipia lodge, our dispatch team handles every detail with meticulous oversight.
@@ -224,7 +224,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5 relative min-h-[340px] lg:min-h-full bg-zinc-900">
             <Image
               src="/airphoto-1.jpg"
-              alt="Skyline Air Private Aviation Journey"
+              alt="Noble Hawk Private Aviation Journey"
               fill
               className="object-cover object-center"
               unoptimized

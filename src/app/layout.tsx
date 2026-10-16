@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Skyline Air | Private Aviation & Luxury Charters",
+  title: " Noble Hawk Aviation Limited Private Aviation & Luxury Charters",
   description:
     "Premier private jet charters, executive travel, and safari flights across Africa and worldwide.",
 };

@@ -105,7 +105,7 @@ export default function FleetPage() {
         {/* Background Aircraft Image */}
         <Image
           src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80"
-          alt="Skyline Air Executive Fleet"
+          alt="Noble Hawk AviationExecutive Fleet"
           fill
           priority
           className="object-cover object-center pointer-events-none"
@@ -125,7 +125,7 @@ export default function FleetPage() {
               Our Aircraft Fleet
             </h1>
             <p className="text-gray-100 text-sm md:text-base leading-relaxed max-w-2xl font-normal drop-shadow-[0_1px_2px_rgba(0,0,0,0.9)]">
-              Sourced through our CAA and FAA-audited partner operators, every aircraft in the Skyline Air network is configured to meet the highest international safety standards, cabin luxury, and performance reliability.
+              Sourced through our CAA and FAA-audited partner operators, every aircraft in the Noble Hawk Aviation network is configured to meet the highest international safety standards, cabin luxury, and performance reliability.
             </p>
           </div>
         </div>
@@ -281,7 +281,7 @@ export default function FleetPage() {
               100% Certified Air Operator Certificate Holders
             </h2>
             <p className="text-zinc-600 text-sm leading-relaxed font-light">
-              Skyline Air operates as a charter broker. We connect clients exclusively with fully licensed Part 135 air operators maintaining dual-pilot flight command and comprehensive international liability insurance.
+              Noble Hawk Aviation operates as a charter broker. We connect clients exclusively with fully licensed Part 135 air operators maintaining dual-pilot flight command and comprehensive international liability insurance.
             </p>
           </div>
 

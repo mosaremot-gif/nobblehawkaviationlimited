@@ -1,27 +1,91 @@
 "use client";
-import { Suspense } from "react";
+
+import { Suspense, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-import { ArrowRight, Plane, Calendar, Users, MapPin, CheckCircle2, ShieldCheck, Clock } from "lucide-react";
+import { ArrowRight, Plane, Calendar, Users, MapPin, CheckCircle2, ShieldCheck, Clock, Loader2 } from "lucide-react";
 
 // Sub-component that safely awaits searchParams inside Suspense
-async function BookingForm({
+function BookingForm({
   searchParams,
 }: {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const resolvedSearchParams = (await searchParams) || {};
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const defaultAircraft = typeof resolvedSearchParams.aircraft === "string" ? resolvedSearchParams.aircraft : "";
-  const defaultFrom = typeof resolvedSearchParams.from === "string" ? resolvedSearchParams.from : "";
-  const defaultTo = typeof resolvedSearchParams.to === "string" ? resolvedSearchParams.to : "";
-  const defaultDate = typeof resolvedSearchParams.date === "string" ? resolvedSearchParams.date : "";
-  const defaultPax = typeof resolvedSearchParams.passengers === "string" ? resolvedSearchParams.passengers : "";
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setErrorMsg("");
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      tripType: formData.get("tripType"),
+      departure: formData.get("departure"),
+      destination: formData.get("destination"),
+      flightDate: formData.get("flightDate"),
+      passengers: formData.get("passengers"),
+      preferredAircraft: formData.get("preferredAircraft"),
+      fullName: formData.get("fullName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      company: formData.get("company"),
+      notes: formData.get("notes"),
+    };
+
+    try {
+      const res = await fetch("/api/send-quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMsg(data.error || "Failed to submit request. Please try again.");
+      }
+    } catch {
+      setErrorMsg("An unexpected error occurred. Please try again or email us directly.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (submitted) {
+    return (
+      <div className="lg:col-span-8 bg-[#62C5ED] border border-[#62C5ED]/50 rounded-3xl p-12 shadow-2xl text-black text-center space-y-6">
+        <div className="w-16 h-16 bg-black text-[#62C5ED] rounded-full flex items-center justify-center mx-auto shadow-xl">
+          <CheckCircle2 className="w-10 h-10" />
+        </div>
+        <h3 className="text-3xl font-black text-black tracking-tight">Request Received Successfully!</h3>
+        <p className="text-sm font-medium text-black max-w-md mx-auto leading-relaxed">
+          Thank you. Your charter itinerary has been sent directly to our Nairobi dispatch desk at <span className="font-bold">info@noblehawkaviationlimited.com</span>. We will review availability and respond within 60 minutes.
+        </p>
+        <button
+          onClick={() => setSubmitted(false)}
+          className="px-6 py-3 bg-black text-white text-xs font-extrabold uppercase tracking-widest rounded-xl hover:bg-zinc-900 transition-all shadow-lg"
+        >
+          Submit Another Request
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="lg:col-span-8 bg-[#62C5ED] border border-[#62C5ED]/50 rounded-3xl p-8 md:p-12 shadow-2xl text-black space-y-8">
-      <form className="space-y-8">
+      <form onSubmit={handleSubmit} className="space-y-8">
+        
+        {errorMsg && (
+          <div className="p-4 bg-red-600 text-white rounded-xl text-xs font-bold">
+            {errorMsg}
+          </div>
+        )}
+
         {/* Flight Type Selection */}
         <div className="space-y-3">
           <label className="block text-xs font-extrabold text-black uppercase tracking-wider">
@@ -51,8 +115,8 @@ async function BookingForm({
             </label>
             <input
               id="departure"
+              name="departure"
               type="text"
-              defaultValue={defaultFrom}
               placeholder="e.g. Wilson Airport (HKNW) or Nairobi"
               required
               className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
@@ -65,8 +129,8 @@ async function BookingForm({
             </label>
             <input
               id="destination"
+              name="destination"
               type="text"
-              defaultValue={defaultTo}
               placeholder="e.g. Maasai Mara, Dubai, or London"
               required
               className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
@@ -82,8 +146,8 @@ async function BookingForm({
             </label>
             <input
               id="flightDate"
+              name="flightDate"
               type="date"
-              defaultValue={defaultDate}
               required
               className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
             />
@@ -95,10 +159,11 @@ async function BookingForm({
             </label>
             <input
               id="passengers"
+              name="passengers"
               type="number"
               min="1"
               max="100"
-              defaultValue={defaultPax || "1"}
+              defaultValue="1"
               required
               className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
             />
@@ -110,7 +175,7 @@ async function BookingForm({
             </label>
             <select
               id="preferredAircraft"
-              defaultValue={defaultAircraft}
+              name="preferredAircraft"
               className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
             >
               <option value="">No preference (Best match)</option>
@@ -133,6 +198,7 @@ async function BookingForm({
               </label>
               <input
                 id="fullName"
+                name="fullName"
                 type="text"
                 placeholder="e.g. Captain James Walker"
                 required
@@ -146,6 +212,7 @@ async function BookingForm({
               </label>
               <input
                 id="email"
+                name="email"
                 type="email"
                 placeholder="info@noblehawkaviationlimited.com"
                 required
@@ -159,6 +226,7 @@ async function BookingForm({
               </label>
               <input
                 id="phone"
+                name="phone"
                 type="tel"
                 placeholder="+254 700 000 000"
                 required
@@ -172,6 +240,7 @@ async function BookingForm({
               </label>
               <input
                 id="company"
+                name="company"
                 type="text"
                 placeholder="Noble Hawk Aviation"
                 className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
@@ -185,6 +254,7 @@ async function BookingForm({
             </label>
             <textarea
               id="notes"
+              name="notes"
               rows={3}
               placeholder="Provide details on baggage requirements, tarmac chauffeurs, or special requests..."
               className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
@@ -195,21 +265,26 @@ async function BookingForm({
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full py-4 bg-black hover:bg-zinc-900 text-white font-extrabold text-xs uppercase tracking-widest rounded-xl transition-all shadow-xl flex items-center justify-center gap-2"
+          disabled={loading}
+          className="w-full py-4 bg-black hover:bg-zinc-900 text-white font-extrabold text-xs uppercase tracking-widest rounded-xl transition-all shadow-xl flex items-center justify-center gap-2 disabled:opacity-50"
         >
-          Submit Charter Request <ArrowRight className="w-4 h-4 text-[#62C5ED]" />
+          {loading ? (
+            <>
+              <Loader2 className="w-4 h-4 text-[#62C5ED] animate-spin" /> Submitting Request...
+            </>
+          ) : (
+            <>
+              Submit Charter Request <ArrowRight className="w-4 h-4 text-[#62C5ED]" />
+            </>
+          )}
         </button>
       </form>
     </div>
   );
 }
 
-// Main Default Export (Static Page wrapper)
-export default function BookingPage({
-  searchParams,
-}: {
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
+// Main Default Export
+export default function BookingPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900 relative">
       <Navbar />
@@ -243,9 +318,8 @@ export default function BookingPage({
       <section className="py-20 px-6 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* Suspense boundary wrapping the async form component */}
           <Suspense fallback={<div className="lg:col-span-8 bg-[#62C5ED]/20 rounded-3xl p-12 text-center text-black font-bold">Loading charter desk options...</div>}>
-            <BookingForm searchParams={searchParams} />
+            <BookingForm />
           </Suspense>
 
           {/* RIGHT COLUMN: What Happens Next Card */}
@@ -299,6 +373,6 @@ export default function BookingPage({
       </section>
 
       <Footer />
-    </main> 
+    </main>
   );
 }

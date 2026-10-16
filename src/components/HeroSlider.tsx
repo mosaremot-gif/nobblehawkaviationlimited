@@ -9,10 +9,10 @@ export default function HeroSlider() {
       image: "/airphoto-2.jpg",
     },
     {
-      image: "/airphoto-2.jpg",
+      image: "/hero-2.jpg",
     },
     {
-      image: "/airphoto-2.jpg",
+      image: "/hero-1.jpg",
     },
   ];
 
@@ -26,23 +26,27 @@ export default function HeroSlider() {
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
+  // Fixed interval setup to avoid unnecessary timer resets
   useEffect(() => {
     const timer = setInterval(() => {
-      nextSlide();
+      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 7000);
     return () => clearInterval(timer);
-  }, [current]);
+  }, [slides.length]);
 
   const activeSlide = slides[current];
 
   return (
     <div className="w-full">
-      {/* Top Full-Width Image Banner (Starts right below the navbar) */}
+      {/* Top Full-Width Image Banner */}
       <div className="relative w-full h-[450px] md:h-[580px] pt-24 overflow-hidden bg-black group">
+        
+        {/* Fixed background image syntax with explicit quotes inside url('') */}
         <div
           className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
-          style={{ backgroundImage: `url(${activeSlide.image})` }}
+          style={{ backgroundImage: `url('${activeSlide.image}')` }}
         />
+
         {/* Subtle Vignette Edge */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
 

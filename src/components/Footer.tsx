@@ -46,34 +46,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Flight Solutions */}
-          <div className="lg:col-span-3 space-y-2">
-            <h2 className="text-[11px] font-mono uppercase tracking-widest text-[#62c5ed] font-bold">
-              Flight Solutions
-            </h2>
-            <ul className="space-y-1.5 text-xs text-zinc-600 font-light">
-              <li>
-                <Link href="/booking?type=passenger" className="hover:text-[#0A0A0A] transition-colors">
-                  Executive & Diplomatic Charter
-                </Link>
-              </li>
-              <li>
-                <Link href="/booking?type=cargo" className="hover:text-[#0A0A0A] transition-colors">
-                  Urgent Cargo & Freight
-                </Link>
-              </li>
-              <li>
-                <Link href="/booking?type=safari" className="hover:text-[#0A0A0A] transition-colors">
-                  Wilderness & Safari Airstrip
-                </Link>
-              </li>
-              <li>
-                <Link href="/booking?type=long-range" className="hover:text-[#0A0A0A] transition-colors">
-                  Intercontinental Heavy Jets
-                </Link>
-              </li>
-            </ul>
-          </div>
+          
 
           {/* 24/7 Contact Details & Action Button */}
           <div className="lg:col-span-3 space-y-3">

@@ -117,7 +117,7 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="hover:text-[#62C5ED] transition-colors"
             >
-              Charter Rates
+              Book with us
             </Link>
           </nav>
 

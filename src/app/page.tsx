@@ -386,24 +386,7 @@ export default function Home() {
 
       <Footer />
 
-      {/* Mobile sticky bar (keeps the main action in reach) */}
-      <div aria-hidden="true" className="h-20 md:hidden" />
-      <div className="fixed bottom-0 inset-x-0 z-40 md:hidden bg-black/95 border-t border-white/15 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] flex gap-3">
-        <Link
-          href="/booking"
-          className="flex-1 text-center bg-[#62C5ED] text-black font-bold py-3 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-        >
-          Request a quote
-        </Link>
-        {waHref && (
-          <a
-            href={waHref}
-            className="flex-1 text-center border border-white/40 text-white font-bold py-3 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-          >
-            WhatsApp
-          </a>
-        )}
-      </div>
+      
     </>
   );
 }

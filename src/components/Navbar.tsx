@@ -78,13 +78,7 @@ export default function Navbar() {
 
         {/* ACTION BUTTON & CONTACT */}
         <div className="hidden lg:flex items-center gap-6">
-          <a
-            href="tel:+254700000000"
-            className="flex items-center gap-2 text-xs font-mono text-white hover:text-[#62C5ED] transition-colors drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
-          >
-            <PhoneCall className="w-3.5 h-3.5 text-[#62C5ED]" />
-            <span>24/7 Desk</span>
-          </a>
+          
 
           <Link
             href="/booking"

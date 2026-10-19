@@ -54,7 +54,7 @@ const missions = [
     route: "Nairobi and beyond: Africa, Middle East, Europe",
     desc: "Direct apron access and non-stop flights on certified operators, with the discretion corporate and diplomatic travel needs.",
     cta: "Request a quote",
-    image: "/airphoto-5.jpg",
+    image: "/airphoto-5.avif",
     imageAlt: "Private jet parked on an airport apron",
   },
   {
@@ -91,7 +91,7 @@ const featured = {
 const ecosystem = [
   { title: "Private terminal and FBO access", desc: "Lounge check-in, vehicle access to the aircraft and help with customs clearance where available." },
   { title: "Tarmac chauffeurs", desc: "Executive vehicles waiting beside your aircraft, with armoured vehicles on request." },
-  { title: "Helicopter and bush transfers", desc: "Connections from international hubs to safari lodges and private islands." },
+  { title: "Helicopter and transfers", desc: "Connections from international hubs to safari lodges and private islands." },
   { title: "Security", desc: "Close protection personnel arranged through licensed providers for executives and dignitaries." },
 ];
 
@@ -164,7 +164,7 @@ export default function Home() {
                 <Award className="w-8 h-8 text-[#0B6E99]" aria-hidden="true" />
                 <h3 className="text-xl font-bold">The whole journey, one contact</h3>
                 <p className="text-zinc-700 text-base leading-relaxed">
-                  From tarmac pickups and catering to bush airstrip arrangements and security, one team coordinates it all.
+                  From tarmac pickups and catering to airstrip arrangements and security, one team coordinates it all.
                 </p>
               </div>
             </div>
@@ -249,7 +249,7 @@ export default function Home() {
               <figure className="lg:col-span-7">
                 <div className="relative h-[400px] md:h-[500px] rounded-3xl overflow-hidden border border-[#62C5ED]/30">
                   <Photo
-                    src="/airphoto-4.jpg"
+                    src="/airphoto-4.avif"
                     alt={`${featured.name} business jet on an airport apron`}
                     sizes="(min-width: 1024px) 58vw, 100vw"
                   />

@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { PhoneCall, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,56 +26,55 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/10 py-4 shadow-2xl"
-          : "bg-gradient-to-b from-black/70 via-black/30 to-transparent py-6 border-none"
+          ? "bg-[#0A0A0A]/90 backdrop-blur-md border-b border-white/10 py-3 shadow-2xl"
+          : "bg-gradient-to-b from-black/70 via-black/30 to-transparent py-5 border-none"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between gap-4">
         
-        {/* BRAND LOGO */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-2xl font-black tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover:text-gray-200 transition-colors">
+        {/* BRAND LOGO & TITLE CONTAINER */}
+        <Link href="/" className="flex items-center gap-3 group shrink-0">
+          
+          {/* Circular wrapper with a clean border, hiding anything outside the radius */}
+          <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-full overflow-hidden border border-white/20 shadow-xl shrink-0 bg-white">
+            <Image
+              src="/NHAL logo..png"
+              alt="Noble Hawk Aviation Limited Logo"
+              fill
+              sizes="(max-width: 768px) 48px, 56px"
+              // scale-150 zooms past the outer blue ring so only the inner white circle fills the container
+              className="object-contain scale-[1.25]" 
+              priority
+              unoptimized
+            />
+          </div>
+
+          <span className="text-xs sm:text-sm md:text-base font-black tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] group-hover:text-gray-200 transition-colors">
             NOBLE HAWK AVIATION<span className="text-[#62c5ed]"> LIMITED</span>
           </span>
-          
-          
         </Link>
 
-        {/* DESKTOP NAVIGATION LINKS - Invisible initially, fades in smoothly on scroll */}
+        {/* DESKTOP NAVIGATION LINKS */}
         <nav
-          className={`hidden md:flex items-center gap-8 text-xs font-bold tracking-wider uppercase text-white transition-all duration-300 ${
+          className={`hidden md:flex items-center gap-6 lg:gap-8 text-xs font-bold tracking-wider uppercase text-white transition-all duration-300 ${
             scrolled
               ? "opacity-100 translate-y-0 pointer-events-auto"
               : "opacity-0 -translate-y-2 pointer-events-none"
           }`}
         >
-          <Link
-            href="/"
-            className="hover:text-[#62C5ED] transition-colors relative py-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#62C5ED] hover:after:w-full after:transition-all"
-          >
+          <Link href="/" className="hover:text-[#62C5ED] transition-colors relative py-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#62C5ED] hover:after:w-full after:transition-all">
             Home
           </Link>
-          <Link
-            href="/about"
-            className="hover:text-[#62C5ED] transition-colors relative py-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#62C5ED] hover:after:w-full after:transition-all"
-          >
+          <Link href="/about" className="hover:text-[#62C5ED] transition-colors relative py-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#62C5ED] hover:after:w-full after:transition-all">
             About
           </Link>
-          <Link
-            href="/fleet"
-            className="hover:text-[#62C5ED] transition-colors relative py-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#62C5ED] hover:after:w-full after:transition-all"
-          >
+          <Link href="/fleet" className="hover:text-[#62C5ED] transition-colors relative py-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#62C5ED] hover:after:w-full after:transition-all">
             Fleet
           </Link>
-          <Link
-            href="/booking"
-            className="hover:text-[#62C5ED] transition-colors relative py-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#62C5ED] hover:after:w-full after:transition-all"
-          >
+          <Link href="/booking" className="hover:text-[#62C5ED] transition-colors relative py-1 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#62C5ED] hover:after:w-full after:transition-all">
             Charter Rates
           </Link>
         </nav>
-
-        
 
         {/* MOBILE MENU TOGGLE */}
         <button
@@ -91,37 +91,19 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0A0A0A]/95 backdrop-blur-lg border-b border-white/10 px-6 py-6 space-y-4">
           <nav className="flex flex-col space-y-3 text-sm font-semibold uppercase tracking-wider text-gray-200">
-            <Link
-              href="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#62C5ED] transition-colors"
-            >
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#62C5ED] transition-colors">
               Home
             </Link>
-            <Link
-              href="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#62C5ED] transition-colors"
-            >
+            <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#62C5ED] transition-colors">
               About
             </Link>
-            <Link
-              href="/fleet"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#62C5ED] transition-colors"
-            >
+            <Link href="/fleet" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#62C5ED] transition-colors">
               Fleet
             </Link>
-            <Link
-              href="/booking"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-[#62C5ED] transition-colors"
-            >
+            <Link href="/booking" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#62C5ED] transition-colors">
               Booking
             </Link>
           </nav>
-
-          
         </div>
       )}
     </header>

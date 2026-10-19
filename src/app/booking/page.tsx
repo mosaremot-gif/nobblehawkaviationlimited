@@ -355,7 +355,7 @@ export default function BookingPage() {
                   <div>
                     <h4 className="text-sm font-bold text-white">Full Ground Services</h4>
                     <p className="text-xs text-gray-300 leading-relaxed font-light mt-1">
-                      Optionally include VIP lounge access, tarmac vehicles, or helicopter connections to bush airstrips.
+                      Optionally include VIP lounge access, tarmac vehicles, or helicopter connections airstrips.
                     </p>
                   </div>
                 </div>

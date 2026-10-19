@@ -79,7 +79,7 @@ const safety = [
   },
   {
     title: "Airstrip checks",
-    desc: "For bush and unpaved airstrips, we confirm runway suitability and recent conditions with the operator before we confirm a flight.",
+    desc: "For airstrips, we confirm runway suitability and recent conditions with the operator before we confirm a flight.",
   },
 ];
 
@@ -134,7 +134,7 @@ export default function AboutPage() {
               </h2>
               <div className="h-0.5 w-16 bg-[#0B6E99]" aria-hidden="true" />
               <p className="text-zinc-700 text-base md:text-lg leading-relaxed">
-                Noble Hawk Aviation Limited connects bush airstrips with major global hubs. We are a brokerage, so we do not fly the aircraft ourselves. We find the right certified operator for your route and manage the booking.
+                Noble Hawk Aviation Limited connects airstrips with major global hubs. We are a brokerage, so we do not fly the aircraft ourselves. We find the right certified operator for your route and manage the booking.
               </p>
               <p className="text-zinc-700 text-base leading-relaxed">
                 That might be a multi-stop executive trip across Africa and the Middle East, or a private landing at a lodge in Laikipia.

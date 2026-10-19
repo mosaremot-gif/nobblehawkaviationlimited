@@ -6,13 +6,20 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function HeroSlider() {
   const slides = [
     {
-      image: "/airphoto-2.jpg",
+      type: "image",
+      src: "/hero-2.jpg",
     },
     {
-      image: "/hero-2.jpg",
+      type: "video",
+      src: "/flight.mp4",
     },
     {
-      image: "/hero-1.jpg",
+      type: "image",
+      src: "/airphoto-2.jpg",
+    },
+    {
+      type: "image",
+      src: "/hero-1.avif",
     },
   ];
 
@@ -38,17 +45,30 @@ export default function HeroSlider() {
 
   return (
     <div className="w-full">
-      {/* Top Full-Width Image Banner */}
+      {/* Top Full-Width Banner */}
       <div className="relative w-full h-[450px] md:h-[580px] pt-24 overflow-hidden bg-black group">
         
-        {/* Fixed background image syntax with explicit quotes inside url('') */}
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
-          style={{ backgroundImage: `url('${activeSlide.image}')` }}
-        />
+        {/* Conditional Rendering for Image vs Video Slide */}
+        {activeSlide.type === "image" ? (
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
+            style={{ backgroundImage: `url('${activeSlide.src}')` }}
+          />
+        ) : (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+          >
+            <source src={activeSlide.src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
 
         {/* Subtle Vignette Edge */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none z-10" />
 
         {/* Carousel Arrows */}
         <button

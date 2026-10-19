@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-xs md:text-sm font-light text-zinc-600 leading-relaxed max-w-sm">
-              With a focus on safety, privacy, and convenience, Noble Hawk Aviation is your trusted charter broker for executive, cargo, and bush safari flights across Africa, the Middle East, and Europe.
+              With a focus on safety, privacy, and convenience, Noble Hawk Aviation is your trusted charter broker for executive, cargo, safari flights across Africa, the Middle East, and Europe.
             </p>
             <div className="flex items-center gap-2 text-xs text-zinc-500 font-mono pt-1">
               <Clock className="w-3.5 h-3.5 text-[#62c5ed]" />

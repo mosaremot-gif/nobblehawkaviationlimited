@@ -117,7 +117,7 @@ function BookingForm({
               id="departure"
               name="departure"
               type="text"
-              placeholder="e.g. Wilson Airport (HKNW) or Nairobi"
+              placeholder="e.g. Nairobi"
               required
               className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
             />
@@ -131,7 +131,7 @@ function BookingForm({
               id="destination"
               name="destination"
               type="text"
-              placeholder="e.g. Maasai Mara, Dubai, or London"
+              placeholder="e.g. London"
               required
               className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
             />
@@ -214,7 +214,7 @@ function BookingForm({
                 id="email"
                 name="email"
                 type="email"
-                placeholder="info@noblehawkaviationlimited.com"
+                placeholder="Enter Email"
                 required
                 className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
               />
@@ -228,7 +228,7 @@ function BookingForm({
                 id="phone"
                 name="phone"
                 type="tel"
-                placeholder="+254 700 000 000"
+                placeholder="Enter Phone Number"
                 required
                 className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
               />
@@ -242,7 +242,7 @@ function BookingForm({
                 id="company"
                 name="company"
                 type="text"
-                placeholder="Noble Hawk Aviation"
+                placeholder="Company name"
                 className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-black transition-all shadow-inner"
               />
             </div>

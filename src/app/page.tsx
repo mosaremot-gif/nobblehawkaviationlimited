@@ -258,7 +258,7 @@ export default function Home() {
                   </div>
                 </div>
                 <figcaption className="mt-3 text-sm text-gray-400">
-                  Representative image. The exact aircraft is confirmed with your quote.
+                  
                 </figcaption>
               </figure>
 
@@ -355,11 +355,11 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="qq-from" className="block text-xs font-bold text-black uppercase tracking-wider mb-2">From</label>
-                  <input id="qq-from" name="from" type="text" placeholder="e.g. Wilson Airport or Nairobi" className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black shadow-inner" />
+                  <input id="qq-from" name="from" type="text" placeholder="e.g. Nairobi" className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black shadow-inner" />
                 </div>
                 <div>
                   <label htmlFor="qq-to" className="block text-xs font-bold text-black uppercase tracking-wider mb-2">To</label>
-                  <input id="qq-to" name="to" type="text" placeholder="e.g. Maasai Mara or Dubai" className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black shadow-inner" />
+                  <input id="qq-to" name="to" type="text" placeholder="e.g. Dubai" className="w-full rounded-xl border border-black/20 bg-white px-4 py-3 text-sm text-black placeholder:text-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black shadow-inner" />
                 </div>
                 <div>
                   <label htmlFor="qq-date" className="block text-xs font-bold text-black uppercase tracking-wider mb-2">Date</label>

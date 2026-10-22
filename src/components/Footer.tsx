@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, ShieldCheck, Clock, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, ShieldCheck, Clock, Phone, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -56,7 +56,11 @@ export default function Footer() {
             <div className="space-y-2.5 text-xs text-zinc-700">
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#62c5ed] shrink-0 mt-0.5" />
-                <span>Nairobi, Kenya ( JKIA )</span>
+                <span>Jommo Kenyatta International Airport cargo area and terminal, Nairobi Kenya </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#62c5ed] shrink-0 mt-0.5" />
+                <span>+254 731 373 131</span>
               </div>
 
               <a

@@ -56,7 +56,7 @@ export default function Footer() {
             <div className="space-y-2.5 text-xs text-zinc-700">
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#62c5ed] shrink-0 mt-0.5" />
-                <span>Jommo Kenyatta International Airport cargo area and terminal, Nairobi Kenya </span>
+                <span>Jommo Kenyatta International Airport cargo centre and terminal, Nairobi Kenya </span>
               </div>
               <div className="flex items-start gap-2">
                 <Phone className="w-3.5 h-3.5 text-[#62c5ed] shrink-0 mt-0.5" />

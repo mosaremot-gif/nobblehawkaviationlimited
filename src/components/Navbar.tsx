@@ -87,10 +87,10 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* RIGHT: MOBILE TOGGLE & REFINED FAR-RIGHT FLUSH IMAGE */}
+        {/* RIGHT: MOBILE TOGGLE & FAR-RIGHT FLUSH IMAGE */}
         <div className="flex items-center gap-4 ml-auto h-full">
           
-          {/* MOBILE MENU TOGGLE BUTTON */}
+          {/* STANDARD HAMBURGER MENU TOGGLE */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-white p-2 focus:outline-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] hover:text-[#62C5ED] transition-colors"
@@ -116,7 +116,7 @@ export default function Navbar() {
               alt="Executive Shield Graphic"
               fill
               sizes="(max-width: 768px) 96px, 112px"
-              className="object-contain object-right h-full w-full mix-blend-screen -translate-x-[4px]"
+              className="object-contain object-right h-full w-full mix-blend-screen -translate-x-[2px]"
               priority
               unoptimized
             />
